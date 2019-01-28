@@ -145,7 +145,9 @@ dispFarthestPoints(p1,p2);
 farthestCornerDistance = abs(abs(farthestCorners(1))- abs(farthestCorners(2)));
 fprintf('Farthest corners distance: %i \n',farthestCornerDistance);
 global happy_faces
-if abs(farthestCornerDistance) > 5
+%todo: This threshold may vary for different datasets and may need resetting.
+threshold=5
+if abs(farthestCornerDistance) > threshold
     fprintf('Smile detected \n')
     happy_faces = happy_faces + 1;
 end
